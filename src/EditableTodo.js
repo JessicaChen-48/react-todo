@@ -22,7 +22,7 @@ function EditableTodo({todo, update, remove}) {
    }
 
   /** Call remove fn passed to this. */
-  function handleDelete() { 
+  function handleDelete() {
     remove();
   }
 
@@ -35,10 +35,10 @@ function EditableTodo({todo, update, remove}) {
   return (
       <div className="EditableTodo">
 
-                {isEditing && 
+                {isEditing &&
 
-                  <TodoForm handleSave={handleSave}/>
-                
+                  <TodoForm initialFormData={todo} handleSave={handleSave}/>
+
                 }
 
                 {!isEditing &&
@@ -56,7 +56,7 @@ function EditableTodo({todo, update, remove}) {
                       Del
                     </button>
                   </div>
-                  <Todo />
+                  <Todo todo={todo}/>
                 </div>
                 }
       </div>
